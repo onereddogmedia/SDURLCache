@@ -713,7 +713,7 @@ static dispatch_queue_t get_disk_io_queue() {
             }
             @catch (NSException *exception) {
                 if ([exception.name isEqualToString:NSInvalidArgumentException]) {
-                    NSLog(@"Could not unarchive object at %@, Invalid archive!", [_diskCachePath stringByAppendingPathComponent:cacheKey]);
+                    DLog(@"Could not unarchive object at %@, Invalid archive!", [_diskCachePath stringByAppendingPathComponent:cacheKey]);
                     [self removeCachedResponseForRequest:request];
                 }
             }
